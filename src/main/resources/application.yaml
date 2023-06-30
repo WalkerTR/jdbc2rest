@@ -1,0 +1,6 @@
+ktor:
+    application:
+        modules:
+            - dev.finiq.ApplicationKt.module
+    deployment:
+        port: 8080
