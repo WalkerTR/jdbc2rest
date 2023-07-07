@@ -2,13 +2,14 @@ package dev.finiq
 
 import io.ktor.server.application.*
 import dev.finiq.plugins.*
+import io.ktor.server.netty.*
 
 fun main(args: Array<String>): Unit =
-    io.ktor.server.netty.EngineMain.main(args)
+    EngineMain.main(args)
 
-@Suppress("unused") // application.conf references the main function. This annotation prevents the IDE from marking it as unused.
+@Suppress("unused") // Referenced in application.conf
 fun Application.module() {
-    configureMonitoring()
     configureHTTP()
     configureRouting()
+    configureSecurity()
 }
